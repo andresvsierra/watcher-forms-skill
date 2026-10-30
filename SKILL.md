@@ -1,0 +1,25 @@
+---
+name: watcher-forms
+description: >-
+  Turn a Google sheet or a written list of questions into a voice form and
+  publish it to the Watcher server. Use when someone wants a form on the watch.
+---
+
+# Watcher forms
+
+The server owns the form. Do not write the database or the voice bridge yourself. Use the Watcher MCP tools.
+
+## Steps
+
+1. Read the questions from a sheet or a document. If a Google Form cannot be read directly, ask for the sheet or the document. That gap is still open.
+2. Build SurveyJS JSON:
+   - One page per section. A section has at most 15 fields.
+   - Short answers are `text`. Long stories are `comment`. A yes or no is `boolean`.
+   - Choices are `dropdown` with at most 6 short options.
+   - Dates, times, and numbers are `text` with `inputType` `date`, `time`, or `number`.
+   - Calculated rules are only `same_place_if_unsaid`, `return_day_from_days`, and `days_from_two_dates`. Do not invent a new rule. Do not calculate a date yourself.
+   - Leave out anything voice cannot ask, such as matrices or files, and list why.
+3. Show the JSON and the list of leftovers. Wait until the person approves.
+4. `form_publish`, then `form_test` with one turn per section, then `form_assign` for their watch.
+
+Do not publish before they approve.
