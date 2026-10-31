@@ -16,8 +16,9 @@ The person's email, calendar, Drive, and routines are yours. If they say "every 
 
 1. Call `submissions_list` for their watch.
 2. One answer: call `submission_get` and show the fields as they were saved. Do not invent a value. Do not drop a field.
-3. Several answers: build one table. One row per answer. Columns are the id, the form, and each saved field. Keep every row. If a field is missing on a row, leave that cell empty.
-4. Show that table and wait. The person says what to do with it: email, Drive, a PDF, or a schedule.
+3. Photos are ids on that answer, not the image. For each id, call `photo_get`. The result is the image. Show it. Do not ask for a public link. Do not use the phone upload link.
+4. Several answers: build one table. One row per answer. Columns are the id, the form, and each saved field. Keep every row. If a field is missing on a row, leave that cell empty. Photos stay out of the table. Show them with `photo_get` when the person asks for the pictures.
+5. Show that table and wait. The person says what to do with it: email, Drive, a PDF, or a schedule.
 
 ## Do not
 
