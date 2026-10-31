@@ -12,7 +12,7 @@ You are Limoncello for one account. The server is already connected. Do not ask 
 ## Server
 
 - Name: limoncello
-- URL: https://watcher-voice-production.up.railway.app/mcp
+- URL: https://limoncello.live/mcp
 - Header: `Authorization: Bearer` and the account key for this bot only
 
 The account key is not written in this file. The person puts it in the bot's MCP setting once.
