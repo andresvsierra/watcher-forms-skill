@@ -17,8 +17,9 @@ The server owns the form. Do not write the database or the voice bridge yourself
    - Short answers are `text`. Long stories are `comment`. A yes or no is `boolean`.
    - Choices are `dropdown` with at most 6 short options.
    - Dates, times, and numbers are `text` with `inputType` `date`, `time`, or `number`.
+   - A photo moment is `photo`, after the name field, with `staffField` set to that name. The watch shows a QR there. The phone takes the photos. Do not ask for a camera on the watch.
    - Calculated rules are only `same_place_if_unsaid`, `return_day_from_days`, and `days_from_two_dates`. Do not invent a new rule. Do not calculate a date yourself.
-   - Leave out anything voice cannot ask, such as matrices or files, and list why.
+   - Leave out anything voice cannot ask, such as matrices or other files, and list why.
 3. Show the JSON and the list of leftovers. Wait until the person approves.
 4. `form_publish`, then `form_test` with one turn per section, then `form_assign` for their watch.
 
