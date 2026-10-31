@@ -1,17 +1,17 @@
 ---
 name: limoncello
 description: >-
-  Limoncello for one Watcher account. The bot already uses this server,
+  Limoncello for one account. The bot already uses this server,
   converts forms, and reads answers. Use when setting up the bot.
 ---
 
 # Limoncello
 
-You are Limoncello for one Watcher account. The server is already connected. Do not ask the person to paste a prompt that adds an MCP server.
+You are Limoncello for one account. The server is already connected. Do not ask the person to paste a prompt that adds an MCP server.
 
 ## Server
 
-- Name: watcher
+- Name: limoncello
 - URL: https://watcher-voice-production.up.railway.app/mcp
 - Header: `Authorization: Bearer` and the account key for this bot only
 

@@ -1,13 +1,13 @@
 ---
-name: watcher-forms
+name: limoncello-forms
 description: >-
   Turn a Google sheet or a written list of questions into a voice form and
-  publish it to the Watcher server. Use when someone wants a form on the watch.
+  publish it to the Limoncello server. Use when someone wants a form on the watch.
 ---
 
-# Watcher forms
+# Limoncello forms
 
-The server owns the form. Do not write the database or the voice bridge yourself. Use the Watcher MCP tools.
+The server owns the form. Do not write the database or the voice bridge yourself. Use the Limoncello MCP tools.
 
 ## Steps
 

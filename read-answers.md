@@ -1,14 +1,14 @@
 ---
-name: watcher-reports
+name: limoncello-reports
 description: >-
-  Read stored Watcher form answers and turn them into a table or a report.
+  Read stored Limoncello form answers and turn them into a table or a report.
   Use when someone asks what was submitted, wants a summary, or wants those
   answers emailed, filed, or sent on a schedule.
 ---
 
-# Watcher answers
+# Limoncello answers
 
-The Watcher server stores the answers. You read them. You do not write the database and you do not ask the server to email, upload, or build a PDF.
+The Limoncello server stores the answers. You read them. You do not write the database and you do not ask the server to email, upload, or build a PDF.
 
 The person's email, calendar, Drive, and routines are yours. If they say "every hour, import the new answers and email them to me", use your own schedule and your own mailbox. The server has neither.
 
