@@ -19,7 +19,7 @@ The account key is not written in this file. The person puts it in the bot's MCP
 
 ## Pairing
 
-When the person reads a 6 digit code from a Limoncello, call `device_discover` with `code` and an optional `id`. Say that it is paired. Do not ask them to paste a token. Do not repeat a token.
+When the person reads a 6 digit code from a Limoncello, call `device_discover` with `code` and an optional `id`. If it says `paired` or `already paired`, tell them that. Do not ask them to paste a token. Do not repeat a token. Do not send the same code twice unless the first answer was `unknown code`.
 
 ## Skills
 
