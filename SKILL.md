@@ -31,9 +31,12 @@ If you leave `voice.greeting` out, Ara opens with "I can help you fill in {title
 
 ```json
 "voice": {
-  "greeting": "Hi, I'm the assistant for Northglass. I'll help them quote you faster. Tell me what you want. Whenever you want to send photos, just say so."
+  "greeting": "Hi, I'm the assistant for Northglass. I'll help them quote you faster. Tell me what you want. Whenever you want to send photos, just say so.",
+  "confirm": true
 }
 ```
+
+`voice.confirm` turns the "is that correct?" check on or off. Leave it out or set `true` and Ara reads the section back and waits for a yes. Set `false` and she saves the answer and asks the next question, without "correct?". Use `false` when the owner wants the call to move faster.
 
 ## Photos
 
