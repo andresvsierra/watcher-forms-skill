@@ -17,7 +17,7 @@ The server owns the form. Do not write the database or the voice bridge yourself
    - Short answers are `text`. Long stories are `comment`. A yes or no is `boolean`.
    - Choices are `dropdown` with at most 6 short options.
    - Dates, times, and numbers are `text` with `inputType` `date`, `time`, or `number`.
-   - A photo moment is `photo`. On a watch, put it after the name field with `staffField` set to that name. The watch shows a QR and the phone takes the photos. Do not ask for a camera on the watch. On a client link, follow the quote rules below. The page shows the photo box. Do not describe a QR.
+   - A photo moment is `photo`. On a physical Limoncello, put it after the name field with `staffField` set to that name. That device shows a QR and the phone takes the photos. A registered web app and a client link do not show a QR: the photo box opens on the screen. Do not ask for a camera on the Limoncello.
    - Calculated rules are only `same_place_if_unsaid`, `return_day_from_days`, and `days_from_two_dates`. Do not invent a new rule. Do not calculate a date yourself.
    - Leave out anything voice cannot ask, such as matrices or other files, and list why.
 3. Show the JSON and the list of leftovers. Wait until the person approves.
@@ -25,26 +25,23 @@ The server owns the form. Do not write the database or the voice bridge yourself
 
 ## Spoken welcome
 
-Ask the owner for the company name and the language the client should hear first. Do not invent the company. Write `voice.greeting` on the survey: two or three short sentences. The shape is: you are the assistant, you help that company quote them faster, they will say what they want by talking, they can send photos here, and it will be easy.
+Ask the owner for the company name and the language the client should hear first. Do not invent the company. Write `voice.greeting` on the survey: two or three short sentences. Say you are the assistant, you help that company quote them faster, they will answer by talking, and whenever they want to send photos they just say so.
 
 If you leave `voice.greeting` out, Ara opens with "I can help you fill in {title}. Tell me what you need."
 
 ```json
 "voice": {
-  "greeting": "Hi, I'm the assistant for Northglass. I'll help them quote you faster. Tell me what you want, and you can send photos right here. This will be easy."
+  "greeting": "Hi, I'm the assistant for Northglass. I'll help them quote you faster. Tell me what you want. Whenever you want to send photos, just say so."
 }
 ```
 
-## Photos on a quote or a client link
+## Photos
 
-Ara does not open the photo box while the section she is in still has empty required fields. A quote that marks name, phone, address, zip, product, rooms, window count, and timeline as required will refuse photos until every one of those is filled.
+Ara asks the required fields of the current section first. She does not open photos while those fields are empty. That is the right order. Do not move the photo section ahead of required fields, and do not drop a required field just so photos can go first.
 
-For a quote or a client link:
+After the required fields are saved, the person chooses what comes next, including photos. The greeting already tells them they can ask for photos when they want.
 
-- Put the photo section near the start.
-- Do not put a wall of required fields in front of it. The client's name can be the only required field.
-- Phone, address, zip, counts, and timeline go on later pages. Leave them optional unless the owner says the quote cannot exist without that one field.
-- The photo element uses `for` set to the page name.
+A photo element uses `for` set to the page name. Only a physical Limoncello shows a QR. A registered web app and a client link open the photo box on the screen. Do not mention a QR for those.
 
 ## Calls
 
