@@ -50,3 +50,5 @@ The server owns the form. Do not write the database or the voice bridge yourself
 `form_test` takes `id` and `turns`. `turns` is an array, one turn per section. Each turn is `{ "patch": { "staff_name": "Ana" } }`.
 
 `form_assign` takes `formId`. Add `watchId` only when the account has more than one watch.
+
+`form_link` takes `formId`. Call `form_get` first. If the owner named a client and the form has a field for that name, also pass `name` and `field`. `field` is the exact element name from `form_get`. Do not guess it. If there is no such field, omit `field`. The answer is a URL. `form_link_revoke` takes `name` or `id` and closes that link.
